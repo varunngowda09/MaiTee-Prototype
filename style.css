@@ -1,0 +1,211 @@
+/* --- VARIABLES (The Vibe System) --- */
+:root {
+    --bg-color: #f4f1ea; /* Aesthetic Beige */
+    --text-color: #1a1a1a;
+    --accent-color: #1a1a1a;
+    --font-head: 'Oswald', sans-serif;
+    --font-body: 'Courier Prime', monospace;
+    --border: 2px solid #1a1a1a;
+}
+
+/* --- DARK MODE (Chaos Mode) --- */
+body.meme-mode {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #39FF14; /* Neon Green */
+    --border: 2px solid #39FF14;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- NAVBAR --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Toggle Switch Styling */
+.vibe-switch-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border: 2px solid #000;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border: 2px solid #000;
+}
+input:checked + .slider { background-color: var(--accent-color); }
+input:checked + .slider:before { transform: translateX(32px); }
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: var(--border);
+    padding: 20px;
+}
+.headline-1, .headline-2 {
+    font-family: var(--font-head);
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+.headline-2 {
+    color: var(--accent-color); /* Changes in Meme Mode */
+}
+.cta-btn {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: transparent;
+    color: var(--text-color);
+    border: var(--border);
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--text-color); /* Brutalist Shadow */
+    transition: transform 0.1s;
+}
+.cta-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--text-color);
+}
+
+/* --- MARQUEE --- */
+.marquee-container {
+    background: var(--accent-color);
+    color: var(--bg-color); /* Invert text color */
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: var(--border);
+}
+.marquee-content {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: scroll 15s linear infinite;
+}
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* --- SHOP SPLIT --- */
+.shop-split {
+    display: flex;
+    height: 60vh;
+}
+.split-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: var(--border);
+    padding: 20px;
+}
+.split-col:last-child { border-right: none; }
+.aesthetic { background-color: #e8e4dc; color: #000; }
+.meme { background-color: #111; color: #fff; }
+
+.shop-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: 2px solid currentColor;
+    background: transparent;
+    color: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- MEME LAB --- */
+.meme-lab {
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: var(--border);
+}
+.lab-container input {
+    padding: 15px;
+    width: 300px;
+    margin: 20px;
+    background: transparent;
+    border: var(--border);
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+/* --- FLOATING WIDGETS --- */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000;
+}
+.spotify-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 10px 20px;
+    border: var(--border);
+    background: var(--bg-color);
+    font-size: 0.9rem;
+}
