@@ -354,7 +354,8 @@ function checkout() {
     if(currentUser) message += `%0ACustomer: ${currentUser}`;
     
     message += "%0A%0AShipping Address: [Type Here]";
-    const phoneNumber = "919999999999"; // REPLACE WITH YOUR NUMBER
+    const phoneNumber = "918999563788"; // REPLACE WITH YOUR NUMBER
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(url, '_blank');
 }
+
