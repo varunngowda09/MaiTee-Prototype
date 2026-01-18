@@ -10,7 +10,7 @@
 <body>
 
     <nav>
-        <div class="logo">MAITEE.</div>
+        <a href="index.html" class="logo">MAITEE.</a>
         <div class="vibe-switch-container">
             <span class="switch-label">CLASSY</span>
             <label class="switch">
@@ -19,14 +19,17 @@
             </label>
             <span class="switch-label">CHAOS</span>
         </div>
-        <div class="cart">CART (0)</div>
+        <div class="nav-icons" style="display: flex; gap: 20px; align-items: center;">
+            <span id="user-greeting" style="cursor: pointer; font-weight: bold;">LOGIN</span>
+            <div class="cart">CART (0)</div>
+        </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
             <h1 class="headline-1">FITS FOR YOUR BODY.</h1>
             <h1 class="headline-2">MEMES FOR YOUR SOUL.</h1>
-            <button class="cta-btn">SHOP THE DROP</button>
+            <a href="shop.html"><button class="cta-btn">SHOP THE DROP</button></a>
         </div>
         <div class="hero-overlay"></div> </header>
 
@@ -40,12 +43,16 @@
         <div class="split-col aesthetic">
             <h2>THE ESSENTIALS</h2>
             <p>Clean. Crisp. Kora.</p>
-            <button class="shop-btn">VIEW SOLIDS</button>
+            <a href="shop.html#solid-section">
+                <button class="shop-btn">VIEW SOLIDS</button>
+            </a>
         </div>
         <div class="split-col meme">
             <h2>THE STATEMENT</h2>
             <p>Witty. Loud. MaloDrama.</p>
-            <button class="shop-btn">VIEW TEXT</button>
+            <a href="shop.html#meme-section">
+                <button class="shop-btn">VIEW TEXT</button>
+            </a>
         </div>
     </section>
 
@@ -64,6 +71,39 @@
     <a href="#" class="whatsapp-btn">
         💬 Chat
     </a>
+
+    <div id="shop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('shop-modal')">&times;</span>
+            <h2 id="shop-title">THE COLLECTION</h2>
+            <div class="product-grid" id="product-grid">
+                </div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('cart-modal')">&times;</span>
+            <h2>YOUR STASH</h2>
+            <div id="cart-items">
+                <p>Your cart is empty.</p>
+            </div>
+            <div class="cart-footer">
+                <h3>Total: ₹<span id="cart-total">0</span></h3>
+                <button class="checkout-btn" onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+    <div class="modal-content" style="max-width: 400px; text-align: center;">
+        <span class="close-btn" onclick="closeModal('login-modal')">&times;</span>
+        <h2>JOIN THE CULT</h2>
+        <p style="margin-bottom: 20px;">Enter your name to track orders.</p>
+        <input type="text" id="username-input" placeholder="Your Name" style="padding: 10px; width: 80%; margin-bottom: 20px; border: 2px solid black;">
+        <button class="add-btn" onclick="loginUser()">ENTER</button>
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
