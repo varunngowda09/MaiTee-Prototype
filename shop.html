@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All | MaiTee</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">MAITEE.</a>
+        <div class="vibe-switch-container">
+            <span class="switch-label">CLASSY</span>
+            <label class="switch">
+                <input type="checkbox" id="vibeToggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="switch-label">CHAOS</span>
+        </div>
+        <div class="cart">CART (0)</div>
+    </nav>
+
+    <div class="hero" style="height: 40vh; border-bottom: var(--border);">
+        <h1 class="headline-1">THE ARCHIVE</h1>
+        <p style="margin-top: 10px; font-family: var(--font-body);">ALL DROPS. NO FILLER.</p>
+    </div>
+
+    <section id="solid-section" style="padding: 40px;">
+        <h2 style="font-family: var(--font-head); font-size: 3rem; margin-bottom: 20px;">THE ESSENTIALS</h2>
+        <div class="product-grid" id="grid-solid">
+            </div>
+    </section>
+
+    <hr style="border: 1px solid var(--text-color);">
+
+    <section id="meme-section" style="padding: 40px;">
+        <h2 style="font-family: var(--font-head); font-size: 3rem; margin-bottom: 20px; color: var(--accent-color);">THE CHAOS</h2>
+        <div class="product-grid" id="grid-meme">
+            </div>
+    </section>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('cart-modal')">&times;</span>
+            <h2>YOUR STASH</h2>
+            <div id="cart-items"></div>
+            <div class="cart-footer">
+                <h3>Total: ₹<span id="cart-total">0</span></h3>
+                <button class="checkout-btn" onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
